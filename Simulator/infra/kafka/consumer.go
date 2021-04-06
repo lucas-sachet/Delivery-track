@@ -13,6 +13,13 @@ type KafkaConsumer struct {
 	MsgChan chan *ckafka.Message
 }
 
+// NewKafkaConsumer creates a new KafkaConsumer struct with its message channel as dependency
+func NewKafkaConsumer(msgChan chan *ckafka.Message) *KafkaConsumer {
+	return &KafkaConsumer{
+		MsgChan: msgChan,
+	}
+}
+
 // Consume consumes all message pulled from apache kafka and sent it to message channel
 func (k *KafkaConsumer) Consume() {
 	configMap := &ckafka.ConfigMap{
