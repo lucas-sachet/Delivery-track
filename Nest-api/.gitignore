@@ -58,3 +58,5 @@ src/app/homepage/pages/**/*.html
 .docker/dbdata/
 
 .history/
+
+.env
