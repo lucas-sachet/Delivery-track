@@ -53,3 +53,8 @@ Thumbs.db
 
 # compiled templates
 src/app/homepage/pages/**/*.html
+
+#DB
+.docker/dbdata/
+
+.history/
