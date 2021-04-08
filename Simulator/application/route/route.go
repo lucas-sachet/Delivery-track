@@ -11,8 +11,8 @@ import (
 
 // Route represents a request of new delivery request
 type Route struct {
-	ID string `json:"routeId"`
-	ClientID string `json:"clientId"`
+	ID        string `json:"routeId"`
+	ClientID  string `json:"clientId"`
 	Positions []Position `json:"position"`
 }
 
@@ -22,11 +22,12 @@ type Position struct {
 	Long float64 `json:"long"`
 }
 
+// PartialRoutePosition is the actual response which the system will return
 type PartialRoutePosition struct {
-	ID string `json:"routeId"`
-	ClientID string `json:"clientId"`
+	ID       string    `json:"routeId"`
+	ClientID string    `json:"clientId"`
 	Position []float64 `json:"position"`
-	Finished bool `json:"finished"`
+	Finished bool      `json:"finished"`
 }
 
 // NewRoute creates a *Route struct
