@@ -50,6 +50,12 @@ export class Route {
       }
     );
   }
+
+  delete() {
+    this.currentMarker.setMap(null);
+    this.endMarker.setMap(null);
+    this.directionsRenderer.setMap(null);
+  }
 }
 
 export class Map {
@@ -59,6 +65,16 @@ export class Map {
     this.map = new google.maps.Map(element, options);
   }
 
+  moveCurrentMarker(id: string, position: google.maps.LatLngLiteral) {
+    this.routes[id].currentMarker.setPosition(position);
+  }
+
+  removeRoute(id: string) {
+    const route = this.routes[id];
+    route.delete();
+    delete this.routes[id];
+  }
+
   addRoute(
     id: string,
     routeOptions: {
@@ -66,11 +82,10 @@ export class Map {
       endMarkerOptions: google.maps.ReadonlyMarkerOptions;
     }
   ) {
-
-    if(id in this.routes) {
+    if (id in this.routes) {
       throw new RouteExistsError();
     }
-    
+
     const { currentMarkerOptions, endMarkerOptions } = routeOptions;
     this.routes[id] = new Route({
       currentMarkerOptions: { ...currentMarkerOptions, map: this.map },
@@ -92,8 +107,6 @@ export class Map {
     this.map.fitBounds(bounds);
   }
 }
-
-
 
 export const makeCarIcon = (color: string) => ({
   path:

@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	kafka2 "github.com/codeedu/imersaofsfc2-simulator/application/kafka"
-	"github.com/codeedu/imersaofsfc2-simulator/infra/kafka"
+	kafka2 "github.com/lucas-sachet/Delivery-track/tree/master/Simulator/app/kafka"
+	"github.com/lucas-sachet/Delivery-track/tree/master/Simulator/infra/kafka"
 	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/joho/godotenv"
 	"log"
