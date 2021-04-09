@@ -25,7 +25,9 @@
 <br />
 
 <h3 align="center">Live Delivery track</h3>
-
+<p align="center">
+    This is an application that visualizes live tracking of deliveries through a map
+ </p>
 
 ![gif](https://github.com/lucas-sachet/Delivery-track/blob/master/delivery-gif.gif)
  
