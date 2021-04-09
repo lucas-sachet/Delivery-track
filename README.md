@@ -25,7 +25,7 @@
 <br />
 
  
-<h3 align="center">Theme-Template-README</h3>
+<h3 align="center">Live Delivery track</h3>
 <p align="center">
   <!-- Here goes the entrance image/gif -->
   ![](delivery-gif.gif)
